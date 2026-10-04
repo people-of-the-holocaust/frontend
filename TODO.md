@@ -4,49 +4,49 @@ Use this checklist to track the frontend migration from JavaScript/JSX to TypeSc
 
 ## Config And Dependencies
 
-- [ ] Update `package.json` with TypeScript build script and type dependencies
-- [ ] Run `npm install` to update `package-lock.json`
-- [ ] Add `tsconfig.json`
-- [ ] Add `tsconfig.node.json`
-- [ ] Rename `vite.config.js` to `vite.config.ts`
-- [ ] Update `eslint.config.js` to include TypeScript file extensions
+- [x] Update `package.json` with TypeScript build script and type dependencies
+- [x] Run `npm install` to update `package-lock.json`
+- [x] Add `tsconfig.json`
+- [x] Add `tsconfig.node.json`
+- [x] Rename `vite.config.js` to `vite.config.ts`
+- [x] Update `eslint.config.js` to include TypeScript file extensions
 
 ## Source Entry Files
 
-- [ ] Rename and convert `src/main.jsx` to `src/main.tsx`
-- [ ] Rename and convert `src/App.jsx` to `src/App.tsx`
+- [x] Rename and convert `src/main.jsx` to `src/main.tsx`
+- [x] Rename and convert `src/App.jsx` to `src/App.tsx`
 
 ## Data Files
 
-- [ ] Add `src/data/types.ts`
-- [ ] Rename and convert `src/data/loaders.js` to `src/data/loaders.ts`
-- [ ] Rename and convert `src/data/indexes.js` to `src/data/indexes.ts`
+- [x] Add `src/data/types.ts`
+- [x] Rename and convert `src/data/loaders.js` to `src/data/loaders.ts`
+- [x] Rename and convert `src/data/indexes.js` to `src/data/indexes.ts`
 
 ## Pages
 
-- [ ] Rename and convert `src/pages/Home.jsx` to `src/pages/Home.tsx`
-- [ ] Rename and convert `src/pages/People.jsx` to `src/pages/People.tsx`
-- [ ] Rename and convert `src/pages/Places.jsx` to `src/pages/Places.tsx`
+- [x] Rename and convert `src/pages/Home.jsx` to `src/pages/Home.tsx`
+- [x] Rename and convert `src/pages/People.jsx` to `src/pages/People.tsx`
+- [x] Rename and convert `src/pages/Places.jsx` to `src/pages/Places.tsx`
 
 ## Components
 
-- [ ] Rename and convert `src/components/Navbar.jsx` to `src/components/Navbar.tsx`
-- [ ] Rename and convert `src/components/MapView.jsx` to `src/components/MapView.tsx`
-- [ ] Rename and convert `src/components/PeopleList.jsx` to `src/components/PeopleList.tsx`
-- [ ] Rename and convert `src/components/PersonDetails.jsx` to `src/components/PersonDetails.tsx`
-- [ ] Rename and convert `src/components/PlaceList.jsx` to `src/components/PlaceList.tsx`
-- [ ] Rename and convert `src/components/PlaceDetails.jsx` to `src/components/PlaceDetails.tsx`
+- [x] Rename and convert `src/components/Navbar.jsx` to `src/components/Navbar.tsx`
+- [x] Rename and convert `src/components/MapView.jsx` to `src/components/MapView.tsx`
+- [x] Rename and convert `src/components/PeopleList.jsx` to `src/components/PeopleList.tsx`
+- [x] Rename and convert `src/components/PersonDetails.jsx` to `src/components/PersonDetails.tsx`
+- [x] Rename and convert `src/components/PlaceList.jsx` to `src/components/PlaceList.tsx`
+- [x] Rename and convert `src/components/PlaceDetails.jsx` to `src/components/PlaceDetails.tsx`
 
 ## Verification
 
-- [ ] Run `npm run build`
-- [ ] Run `npm run dev`
-- [ ] Check the Home page loads
-- [ ] Check the map loads markers/clusters
-- [ ] Check navigation works
-- [ ] Check People records load from CSV
-- [ ] Check People search works
-- [ ] Check clicking a person shows activities
-- [ ] Check Places records load from CSV
-- [ ] Check Places search works
-- [ ] Check clicking a place shows activities
+- [x] Run `npm run build`
+- [x] Run `npm run dev`
+- [x] Check the Home page loads
+- [x] Check the map loads markers/clusters
+- [x] Check navigation works
+- [x] Check People records load from CSV
+- [x] Check People search works
+- [x] Check clicking a person shows activities
+- [x] Check Places records load from CSV
+- [x] Check Places search works
+- [x] Check clicking a place shows activities
