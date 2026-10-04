@@ -25,7 +25,7 @@ export type ActivityRecord = CsvRecord & {
 export type ActivityIndex = Record<string, ActivityRecord[]>;
 
 export type MapRecord = {
-  name?: string;
+  Name?: string;
   Latitude?: string;
   Longitude?: string;
   Type?: string;
