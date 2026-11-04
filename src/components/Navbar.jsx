@@ -21,7 +21,7 @@ export default function Navbar({ variant }) {
         <nav aria-label="Main navigation" className="home-navigation">
           <Link to="/people">People</Link>
           <Link to="/places">Places</Link>
-          <button type="button" onClick={() => scrollTo("home-about-section")}>About</button>
+          <button type="button" onClick={() => scrollTo("home-about-section")}>About</button> // TODO: Update with about page when done
           <Link to="/people" className="home-search-link" aria-label="Search people">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
               <circle cx="10.5" cy="10.5" r="6.5" />

@@ -18,7 +18,8 @@ export default function Home() {
           <div className="home-hero-content">
             <h1 id="home-title">People of<br />the Holocaust</h1>
             <p>Exploring the people, places, and historical<br className="home-desktop-break" /> connections of the Holocaust.</p>
-            <Link className="home-collection-button" to="/about">About the Project</Link>
+            // <Link className="home-collection-button" to="/about">About the Project</Link>
+            <Link className="home-collection-button" to="/">About the Project</Link> // TODO: update this when about page done
           </div>
         </section>
 
