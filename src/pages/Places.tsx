@@ -6,25 +6,31 @@ import PlaceDetails from "../components/PlaceDetails";
 import { loadCSV } from "../data/loaders";
 import { buildPlaceIndex } from "../data/indexes";
 
+import type { ActivityIndex, ActivityRecord, PlaceRecord } from "../data/types";
+
 export default function Places() {
-  const [places, setPlaces] = useState([]);
-  const [placeIndex, setPlaceIndex] = useState({});
-  const [selected, setSelected] = useState(null);
+  const [places, setPlaces] = useState<PlaceRecord[]>([]);
+  const [placeIndex, setPlaceIndex] = useState<ActivityIndex>({});
+  const [selected, setSelected] = useState<PlaceRecord | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const filteredPlaces = (places || []).filter((p) => {
-    return (p.Name || "")
+  const filteredPlaces = (places || []).filter((place) => {
+    return (place.Name || "")
       .toLowerCase()
       .includes((searchTerm || "").toLowerCase());
   });
 
   useEffect(() => {
     async function loadData() {
-      const placeData = await loadCSV(`${import.meta.env.BASE_URL}data/place_table.csv`);
-      const activityData = await loadCSV(`${import.meta.env.BASE_URL}data/activity_table.csv`);
+      const placeData = await loadCSV<PlaceRecord>(
+        `${import.meta.env.BASE_URL}data/place_table.csv`,
+      );
+      const activityData = await loadCSV<ActivityRecord>(
+        `${import.meta.env.BASE_URL}data/activity_table.csv`,
+      );
 
-        setPlaces(placeData);
-        setPlaceIndex(buildPlaceIndex(activityData));
+      setPlaces(placeData);
+      setPlaceIndex(buildPlaceIndex(activityData));
     }
 
     loadData();
@@ -48,12 +54,11 @@ export default function Places() {
             background: "#111",
             color: "#eee",
             border: "1px solid #444",
-            borderRadius: "4px"
+            borderRadius: "4px",
           }}
         />
 
         <div style={{ display: "flex", gap: "2rem" }}>
-          
           <div style={{ width: "40%", maxHeight: "600px", overflowY: "auto" }}>
             <PlaceList places={filteredPlaces} onSelect={setSelected} />
           </div>
@@ -62,15 +67,13 @@ export default function Places() {
             <PlaceDetails
               place={selected}
               activities={
-                selected
-                  ? placeIndex[String(parseInt(selected.LID))] || []
-                  : []
+                selected ? placeIndex[String(parseInt(selected.LID))] || [] : []
               }
             />
           </div>
-
         </div>
       </section>
     </>
   );
 }
+
