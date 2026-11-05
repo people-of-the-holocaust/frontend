@@ -1,14 +1,18 @@
 // Navbar component at the top of each page, buttons to move between pages
 import { Link, useNavigate } from "react-router-dom";
 
-export default function Navbar({ variant }) {
+type NavbarProps = {
+  variant?: "home";
+};
+
+export default function Navbar({ variant }: NavbarProps) {
   const navigate = useNavigate();
 
   if (variant === "home") {
-    const scrollTo = (id) => {
+    const scrollTo = (id: string) => {
       const section = document.getElementById(id);
       section?.scrollIntoView({ behavior: "smooth", block: "start" });
-      const heading = section?.querySelector("h2, h3");
+      const heading = section?.querySelector<HTMLHeadingElement>("h2, h3");
       if (heading) {
         heading.setAttribute("tabindex", "-1");
         heading.focus({ preventScroll: true });
