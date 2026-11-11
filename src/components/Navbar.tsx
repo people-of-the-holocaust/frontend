@@ -1,5 +1,5 @@
 // Navbar component at the top of each page, buttons to move between pages
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 type NavbarProps = {
   variant?: "home";
@@ -9,23 +9,13 @@ export default function Navbar({ variant }: NavbarProps) {
   const navigate = useNavigate();
 
   if (variant === "home") {
-    const scrollTo = (id: string) => {
-      const section = document.getElementById(id);
-      section?.scrollIntoView({ behavior: "smooth", block: "start" });
-      const heading = section?.querySelector<HTMLHeadingElement>("h2, h3");
-      if (heading) {
-        heading.setAttribute("tabindex", "-1");
-        heading.focus({ preventScroll: true });
-      }
-    };
-
     return (
       <header className="home-header">
         <Link className="home-brand" to="/">People of the Holocaust</Link>
         <nav aria-label="Main navigation" className="home-navigation">
           <Link to="/people">People</Link>
           <Link to="/places">Places</Link>
-          <button type="button" onClick={() => scrollTo("home-about-section")}>About</button> {/* TODO: Update with about page when done */}
+          <NavLink to="/about">About</NavLink>
           <Link to="/people" className="home-search-link" aria-label="Search people">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
               <circle cx="10.5" cy="10.5" r="6.5" />
@@ -45,6 +35,7 @@ export default function Navbar({ variant }: NavbarProps) {
         <button onClick={() => navigate("/")}>Home</button>
         <button onClick={() => navigate("/people")}>The People</button>
         <button onClick={() => navigate("/places")}>The Places</button>
+        <button onClick={() => navigate("/about")}>About</button>
       </div>
     </div>
   );
